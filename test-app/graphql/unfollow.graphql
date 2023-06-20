@@ -1,0 +1,27 @@
+mutation CreateUnfollowTypedData {
+  createUnfollowTypedData(request:{
+    profile: "0x1d"
+  }) {
+    id
+    expiresAt
+    typedData {
+      types {
+        BurnWithSig {
+          name
+          type
+        }
+      }
+      domain {
+        version
+        chainId
+        name
+        verifyingContract
+      }
+      value {
+        nonce
+        deadline
+        tokenId
+      }
+    }
+  }
+}

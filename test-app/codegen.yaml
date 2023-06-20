@@ -1,0 +1,18 @@
+schema: "https://api-mumbai.lens.dev/playground"
+
+documents: "./graphql/*.graphql"
+
+generates:
+  ./graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+      - fragment-matcher
+
+    config:
+      - dedupeFragments: true
+      # - fetcher:
+          # # What function to run?
+          # func: "./auth-fetcher#fetcher"
+          # isReactHook: false
